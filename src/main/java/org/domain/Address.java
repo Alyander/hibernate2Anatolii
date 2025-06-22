@@ -20,6 +20,15 @@ public class Address {
     private String address;
     @Column(name= "address2")
     private String address2;
-
-
+    @Column(name = "district", nullable = false, length = 50)
+    private String district;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="city_id")
+    private City city;
+    @Column(name = "postal_code", nullable = false, length = 10)
+    private String postalCode;
+    @Column(name = "phone", nullable = false, length = 20)
+    private String phone;
+    @Column(name="last_update")
+    private java.sql.Timestamp lastUpdate;
 }
