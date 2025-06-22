@@ -1,4 +1,4 @@
-package org.lol;
+package org.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,13 +11,18 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "category")
-public class Category {
+@Table(name = "city")
+public class City {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private short category_id;
-    @Column(name = "name", length = 25, nullable = false)
-    private String name;
+    @Column(name = "city_id", nullable = false)
+    private short city_id;
+    @Column(name = "city", length = 50, nullable = false)
+    private String city;
+    @OneToOne
+    @JoinColumn(name = "country_id")
+    private Country country_id;
     @Column(name = "last_update")
     private java.sql.Timestamp last_update;
+
 }

@@ -17,6 +17,9 @@
 
         <property name="hibernate.hbm2ddl.auto">update</property>
 
-        <!-- <mapping class="org.example.entity.YourEntity"/> -->
+        <mapping class="org.domain.Film"/>
+        <mapping class="org.domain.Language"/>
+        <mapping class="org.domain.Film_text"/>
+        <mapping class="org.domain.Country"/>
     </session-factory>
 </hibernate-configuration>

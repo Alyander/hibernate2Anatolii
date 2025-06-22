@@ -1,11 +1,10 @@
-package org.lol;
+package org.domain;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.domain.Film;
 
 @Getter
 @Setter
@@ -14,7 +13,7 @@ import org.domain.Film;
 @Entity
 @Table(name = "film_text")
 public class Film_text {
-
+    @Id
     @OneToOne
     @JoinColumn(name = "film_id")
     private Film film_id;
