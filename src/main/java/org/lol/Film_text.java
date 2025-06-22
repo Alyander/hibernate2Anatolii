@@ -1,13 +1,11 @@
-package org.domain;
+package org.lol;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.sql.Date;
-import java.sql.Timestamp;
+import org.domain.Film;
 
 @Getter
 @Setter
@@ -21,7 +19,7 @@ public class Film_text {
     @JoinColumn(name = "film_id")
     private Film film_id;
     @Column
-    private Timestamp last_update;
+    private java.sql.Timestamp last_update;
 
     @Column(name = "title",length = 255,nullable = false)
     private String title;

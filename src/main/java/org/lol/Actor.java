@@ -1,8 +1,6 @@
-package org.domain;
+package org.lol;
 
 import jakarta.persistence.*;
-
-import java.sql.Timestamp;
 
 @Entity
 @Table(name = "actor")
@@ -15,6 +13,6 @@ public class Actor {
     @Column(name = "last_name", length = 45, nullable = false)
     private String last_name;
     @Column(name = "last_update")
-    private Timestamp last_update;
+    private java.sql.Timestamp last_update;
 
 }

@@ -1,4 +1,4 @@
-package org.domain;
+package org.lol;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;

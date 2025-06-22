@@ -1,5 +1,4 @@
-package org.domain;
-
+package org.lol;
 import jakarta.persistence.*;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -8,30 +7,29 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Date;
-import java.sql.Timestamp;
-
 @Setter
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "rentai")
-public class Rentai {
+@Table(name = "payment")
+public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int rentai_id;
-    @OneToOne
-    @JoinColumn(name = "inventory_id")
-    private Inventory inventory;
+    private short payment_id;
     @OneToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
-    @Column(name = "return_date")
-    private Date returnDate;
     @OneToOne
     @JoinColumn(name = "staff_id")
-    private Staff staff;
+    private Staff product;
+    @OneToOne
+    @JoinColumn(name = "rentai_id")
+    private Rentai rentai;
+    @Column(name = "amount")
+    private double amount;
+    @Column(name = "payment_date")
+    private java.sql.Date paymentDate;
     @Column(name = "last_update")
-    private Timestamp lastUpdate;
+    private java.sql.Timestamp lastUpdate;
 }

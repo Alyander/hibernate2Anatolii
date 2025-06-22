@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Timestamp;
-
 
 @Setter
 @Getter
@@ -21,7 +19,7 @@ public class Language {
     @Column(name = "language_id", nullable = false)
     private short language_id;
     @Column(name = "last_update"/*,columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"*/)
-    private Timestamp last_update;
+    private java.sql.Timestamp last_update;
     @Column(name = "name", length = 20, nullable = false)
     private String name;
 

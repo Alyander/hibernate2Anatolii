@@ -1,4 +1,4 @@
-package org.domain;
+package org.lol;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Timestamp;
 @Setter
 @Getter
 @AllArgsConstructor
@@ -21,6 +20,6 @@ public class Country {
     @Column(name = "country", length = 50, nullable = false)
     private String country;
     @Column(name = "last_update")
-    private Timestamp last_update;
+    private java.sql.Timestamp last_update;
 
 }

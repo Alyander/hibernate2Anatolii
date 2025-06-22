@@ -6,7 +6,7 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">org.mariadb.jdbc.Driver</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/project</property>
+        <property name="hibernate.connection.url">jdbc:mariadb://localhost:3306/movie</property>
         <property name="hibernate.connection.username">anatolii</property>
         <property name="hibernate.connection.password">6879</property>
 

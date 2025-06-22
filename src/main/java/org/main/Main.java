@@ -4,7 +4,6 @@ import org.domain.Film;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
 import java.util.List;
 import java.util.Set;
 
@@ -13,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
         List<Film> set;
         try (Session session = sessionFactory.openSession()) {
-            set = session.createQuery("from Film f", Film.class).list();
+            set = session.createNativeQuery("SELECT * FROM film", Film.class).list();
         }
         System.out.println(set);
     }
