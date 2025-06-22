@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Setter
 @Getter
@@ -30,5 +31,6 @@ public class Address {
     @Column(name = "phone", nullable = false, length = 20)
     private String phone;
     @Column(name="last_update")
+    @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
 }

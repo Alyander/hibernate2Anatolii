@@ -6,6 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Setter
 @Getter
@@ -34,5 +35,6 @@ public class Customer {
     @Column(name = "create_date")
     private java.sql.Date createDate;
     @Column(name = "last_update")
+    @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
 }

@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Getter
 @Setter
@@ -18,6 +19,7 @@ public class Film_text {
     @JoinColumn(name = "film_id")
     private Film film_id;
     @Column
+    @UpdateTimestamp
     private java.sql.Timestamp last_update;
 
     @Column(name = "title",length = 255,nullable = false)

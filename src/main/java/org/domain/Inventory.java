@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Setter
 @Getter
@@ -22,5 +23,6 @@ public class Inventory {
     @JoinColumn(name="store_id")
     private Store store;
     @Column(name = "last_update")
+    @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
 }
