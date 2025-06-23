@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Blob;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -28,7 +30,8 @@ public class Staff {
     @JoinColumn(name = "address_id", nullable = false)
     private Address address;
     @Column(name = "picture")
-    private byte[] picture;
+    // IDEA ругается но код сам работает
+    private Blob picture;
     @Column(name = "email", nullable = false, length = 50)
     private String email;
     @OneToOne
