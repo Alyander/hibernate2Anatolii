@@ -27,8 +27,6 @@ public class Address {
     @OneToOne
     @JoinColumn(name="city_id", nullable = false, referencedColumnName = "city_id")
     private City city;
-//    @Column(name= "city_id", nullable = false, length = 5)
-//    private short cityId;
     @Column(name = "postal_code",length = 10)
     private String postalCode;
     @Column(name = "phone", nullable = false, length = 20)

@@ -21,7 +21,7 @@ public class City {
     @Column(name = "city", length = 50, nullable = false)
     private String city;
     @OneToOne
-    @JoinColumn(name = "country_id")
+    @JoinColumn(name = "country_id", nullable = false)
     private Country country_id;
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp

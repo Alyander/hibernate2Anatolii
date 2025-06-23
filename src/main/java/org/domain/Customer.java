@@ -17,21 +17,21 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id", length = 3)
+    @Column(name = "customer_id", length = 5)
     private short customer_id;
     @OneToOne
-    @JoinColumn(name = "store_id")
+    @JoinColumn(name = "store_id", nullable = false)
     private Store store;
     @Column(length = 45,name = "first_name",  nullable = false)
     private String firstName;
     @Column(length = 45, name = "last_name", nullable = false)
     private String lastName;
-    @Column(length = 50, name = "email", nullable = false)
+    @Column(length = 50, name = "email")
     private String email;
     @OneToOne
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id", nullable = false)
     private Address address;
-    @Column(length = 1,name = "active",nullable = false)
+    @Column(length = 11,name = "active",nullable = false)
     private int active;
     @Column(name = "create_date")
     private java.sql.Date createDate;
