@@ -16,10 +16,10 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Film_Actor {
     @Id
     @OneToOne
-    @JoinColumn(name = "actor_id")
+    @JoinColumn(name = "actor_id", nullable = false)
     private Actor actor;
     @OneToOne
-    @JoinColumn(name = "film_id")
+    @JoinColumn(name = "film_id", nullable = false)
     private Film film;
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp

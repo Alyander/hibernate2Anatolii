@@ -19,10 +19,10 @@ public class Language {
     @Id
     @Column(name = "language_id", length = 3)
     private short language_id;
-    @Column(name = "last_update", nullable = false/*,columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"*/)
-    @UpdateTimestamp
-    private java.sql.Timestamp last_update;
     @Column(name = "name", length = 20, nullable = false)
     private String name;
+    @Column(name = "last_update", nullable = false)
+    @UpdateTimestamp
+    private java.sql.Timestamp last_update;
 
 }

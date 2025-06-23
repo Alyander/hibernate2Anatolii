@@ -25,16 +25,16 @@ public class Staff {
     @Column(name = "last_name", nullable = false, length = 45)
     private String lastName;
     @OneToOne
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id", nullable = false)
     private Address address;
     @Column(name = "picture")
     private byte[] picture;
     @Column(name = "email", nullable = false, length = 50)
     private String email;
     @OneToOne
-    @JoinColumn(name = "store_id")
+    @JoinColumn(name = "store_id", nullable = false)
     private Store store;
-    @Column(name = "active", length = 1, nullable = false)
+    @Column(name = "active", length = 6, nullable = false)
     private short active;
     @Column(name = "username", nullable = false, length = 16)
     private String username;

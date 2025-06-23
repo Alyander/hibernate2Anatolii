@@ -21,10 +21,8 @@ public class Film_text {
     @Column
     @UpdateTimestamp
     private java.sql.Timestamp last_update;
-
     @Column(name = "title",length = 255,nullable = false)
     private String title;
-
-    @Column(name = "description",length = 65535)
+    @Column(name = "description")
     private String description;
 }

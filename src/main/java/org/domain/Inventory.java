@@ -18,10 +18,10 @@ public class Inventory {
     @Column(name = "inventory_id", length = 8)
     private short inventory_id;
     @OneToOne
-    @JoinColumn(name="film_id")
+    @JoinColumn(name="film_id", nullable = false)
     private Film film;
     @OneToOne
-    @JoinColumn(name="store_id")
+    @JoinColumn(name="store_id", nullable = false)
     private Store store;
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp

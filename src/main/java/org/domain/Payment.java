@@ -20,17 +20,17 @@ public class Payment {
     @Column(name = "payment_id", length = 5)
     private short payment_id;
     @OneToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
     @OneToOne
-    @JoinColumn(name = "staff_id")
+    @JoinColumn(name = "staff_id", nullable = false)
     private Staff product;
     @OneToOne
-    @JoinColumn(name = "rental_id")
+    @JoinColumn(name = "rental_id", nullable = false)
     private Rental rental;
-    @Column(name = "amount")
+    @Column(name = "amount", nullable = false)
     private double amount;
-    @Column(name = "payment_date")
+    @Column(name = "payment_date", nullable = false)
     private java.sql.Date paymentDate;
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp

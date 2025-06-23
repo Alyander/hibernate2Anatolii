@@ -19,10 +19,10 @@ public class Store {
     @Column(name = "store_id", length = 3)
     private short store_id;
     @OneToOne
-    @JoinColumn(name = "manager_staff_id")
+    @JoinColumn(name = "manager_staff_id", nullable = false)
     private Staff manager;
     @OneToOne
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id", nullable = false)
     private Address address;
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp

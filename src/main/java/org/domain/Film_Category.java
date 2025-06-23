@@ -16,10 +16,10 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Film_Category {
     @Id
     @OneToOne
-    @JoinColumn(name = "film_id")
+    @JoinColumn(name = "film_id", nullable = false)
     private Film film;
     @OneToOne
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", nullable = false)
     private Category category;
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
