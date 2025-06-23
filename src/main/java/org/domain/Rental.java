@@ -18,7 +18,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Rental {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "rental_id")
+    @Column(name = "rental_id", length = 11)
     private int rental_id;
     @Column(name = "rental_date")
     private java.sql.Date rentalDate;

@@ -16,6 +16,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "category_id", length = 3)
     private short category_id;
     @Column(name = "name", length = 25, nullable = false)
     private String name;

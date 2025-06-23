@@ -17,7 +17,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Language {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
-    @Column(name = "language_id", nullable = false)
+    @Column(name = "language_id", length = 3)
     private short language_id;
     @Column(name = "last_update", nullable = false/*,columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP"*/)
     @UpdateTimestamp

@@ -17,6 +17,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "payment_id", length = 5)
     private short payment_id;
     @OneToOne
     @JoinColumn(name = "customer_id")
@@ -25,7 +26,7 @@ public class Payment {
     @JoinColumn(name = "staff_id")
     private Staff product;
     @OneToOne
-    @JoinColumn(name = "rentai_id")
+    @JoinColumn(name = "rental_id")
     private Rental rental;
     @Column(name = "amount")
     private double amount;
