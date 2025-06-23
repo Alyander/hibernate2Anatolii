@@ -26,12 +26,12 @@ public class Payment {
     private Staff product;
     @OneToOne
     @JoinColumn(name = "rentai_id")
-    private Rentai rentai;
+    private Rental rental;
     @Column(name = "amount")
     private double amount;
     @Column(name = "payment_date")
     private java.sql.Date paymentDate;
-    @Column(name = "last_update")
+    @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
 }

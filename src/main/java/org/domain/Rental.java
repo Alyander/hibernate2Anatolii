@@ -14,11 +14,14 @@ import org.hibernate.annotations.UpdateTimestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "rentai")
-public class Rentai {
+@Table(name = "rental")
+public class Rental {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int rentai_id;
+    @Column(name = "rental_id")
+    private int rental_id;
+    @Column(name = "rental_date")
+    private java.sql.Date rentalDate;
     @OneToOne
     @JoinColumn(name = "inventory_id")
     private Inventory inventory;
@@ -30,7 +33,7 @@ public class Rentai {
     @OneToOne
     @JoinColumn(name = "staff_id")
     private Staff staff;
-    @Column(name = "last_update")
+    @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
 }

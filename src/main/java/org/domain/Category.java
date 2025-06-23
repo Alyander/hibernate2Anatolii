@@ -19,7 +19,7 @@ public class Category {
     private short category_id;
     @Column(name = "name", length = 25, nullable = false)
     private String name;
-    @Column(name = "last_update")
+    @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp last_update;
 }

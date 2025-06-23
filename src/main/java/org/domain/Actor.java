@@ -13,7 +13,7 @@ public class Actor {
     private String first_name;
     @Column(name = "last_name", length = 45, nullable = false)
     private String last_name;
-    @Column(name = "last_update")
+    @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp last_update;
 

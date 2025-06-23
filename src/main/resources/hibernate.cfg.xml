@@ -26,5 +26,7 @@
         <mapping class="org.domain.Store"/>
         <mapping class="org.domain.Staff"/>
         <mapping class="org.domain.Customer"/>
+        <mapping class="org.domain.Rental"/>
+<!--        <mapping package="org.domain"/>-->
     </session-factory>
 </hibernate-configuration>

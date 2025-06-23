@@ -20,7 +20,7 @@ public class Film_Category {
     @OneToOne
     @JoinColumn(name = "category_id")
     private Category category;
-    @Column(name = "last_update")
+    @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
 }

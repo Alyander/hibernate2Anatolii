@@ -35,7 +35,7 @@ public class Customer {
     private int active;
     @Column(name = "create_date")
     private java.sql.Date createDate;
-    @Column(name = "last_update")
+    @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
 }
