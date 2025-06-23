@@ -27,12 +27,12 @@ public class Rental {
     private Inventory inventory_id;
     @OneToOne
     @JoinColumn(name = "customer_id", nullable = false)
-    private Customer customer;
+    private Customer customer_id;
     @Column(name = "return_date")
     private java.sql.Date returnDate;
     @OneToOne
     @JoinColumn(name = "staff_id", nullable = false)
-    private Staff staff;
+    private Staff staff_id;
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
