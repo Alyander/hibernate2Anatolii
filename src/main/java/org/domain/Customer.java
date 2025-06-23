@@ -17,7 +17,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Column(name = "customer_id", length = 3)
+    private short customer_id;
     @OneToOne
     @JoinColumn(name = "store_id")
     private Store store;
