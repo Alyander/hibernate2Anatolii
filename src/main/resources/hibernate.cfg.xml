@@ -21,5 +21,9 @@
         <mapping class="org.domain.Language"/>
         <mapping class="org.domain.Film_text"/>
         <mapping class="org.domain.Country"/>
+        <mapping class="org.domain.Address"/>
+        <mapping class="org.domain.City"/>
+        <mapping class="org.domain.Store"/>
+        <mapping class="org.domain.Staff"/>
     </session-factory>
 </hibernate-configuration>

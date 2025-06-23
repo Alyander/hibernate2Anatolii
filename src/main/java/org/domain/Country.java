@@ -20,7 +20,7 @@ public class Country {
     private short country_id;
     @Column(name = "country", length = 50, nullable = false)
     private String country;
-    @Column(name = "last_update")
+    @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp last_update;
 
