@@ -22,9 +22,9 @@ public class DBControl {
         Customer c;
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            Address address = session.createNativeQuery("SELECT * from movie.address where address='23 Workhaven Lane'", Address.class)
+            Address address = session.createQuery(" from Address where address='23 Workhaven Lane'", Address.class)
                     .getSingleResult();
-            Store store = session.createNativeQuery("SELECT * from movie.store where store_id=1", Store.class).getSingleResult();
+            Store store = session.createNativeQuery("SELECT * from store where store_id=1", Store.class).getSingleResult();
             Customer customer = new Customer((short) 101, store,firstname,LastName,email,address,1,Date.valueOf("2023-05-06"), Timestamp.valueOf("2023-05-06"));
             c =customer;
             session.persist(customer);

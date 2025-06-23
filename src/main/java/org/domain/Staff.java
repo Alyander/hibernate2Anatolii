@@ -18,7 +18,8 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Staff {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private short id;
+    @Column(name = "staff_id",  length = 3)
+    private short staff_id;
     @Column(name = "first_name", nullable = false, length = 45)
     private String firstName;
     @Column(name = "last_name", nullable = false, length = 45)
@@ -27,7 +28,7 @@ public class Staff {
     @JoinColumn(name = "address_id")
     private Address address;
     @Column(name = "picture")
-    private java.sql.Blob picture;
+    private byte[] picture;
     @Column(name = "email", nullable = false, length = 50)
     private String email;
     @OneToOne
