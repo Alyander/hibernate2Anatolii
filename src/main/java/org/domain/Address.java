@@ -16,21 +16,24 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Address {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "address_id", length = 5, nullable = false)
     private short address_id;
-    @Column(name = "address", length = 50)
+    @Column(name = "address", length = 50, nullable = false)
     private String address;
-    @Column(name= "address2")
+    @Column(name= "address2", length = 50)
     private String address2;
-    @Column(name = "district", nullable = false, length = 50)
+    @Column(name = "district", nullable = false, length = 20)
     private String district;
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne
     @JoinColumn(name="city_id")
     private City city;
+//    @Column(name= "city_id", nullable = false, length = 5)
+//    private short cityId;
     @Column(name = "postal_code", nullable = false, length = 10)
     private String postalCode;
     @Column(name = "phone", nullable = false, length = 20)
     private String phone;
-    @Column(name="last_update")
+    @Column(name="last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
 }

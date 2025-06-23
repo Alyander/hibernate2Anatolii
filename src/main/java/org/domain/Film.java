@@ -21,8 +21,8 @@ import java.time.LocalDateTime;
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "film_id", nullable = false)
-    private long film_id;
+    @Column(name = "film_id", nullable = false, length = 5)
+    private short film_id;
     @Column(name = "title", length = 128, nullable = false)
     private String title;
     @Column(name = "description", length = 65535)

@@ -16,7 +16,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Country {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "country_id", nullable = false)
+    @Column(name = "country_id",  length = 5)
     private short country_id;
     @Column(name = "country", length = 50, nullable = false)
     private String country;
