@@ -27,6 +27,11 @@
         <mapping class="org.domain.Staff"/>
         <mapping class="org.domain.Customer"/>
         <mapping class="org.domain.Rental"/>
-<!--        <mapping package="org.domain"/>-->
+        <mapping class="org.domain.Inventory"/>
+        <mapping class="org.domain.Payment"/>
+        <mapping class="org.domain.Actor"/>
+        <mapping class="org.domain.Film_Actor"/>
+        <mapping class="org.domain.Category"/>
+        <mapping class="org.domain.Film_Category"/>
     </session-factory>
 </hibernate-configuration>

@@ -8,6 +8,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 public class Actor {
     @Id
     @GeneratedValue
+    @Column(name = "actor_id",nullable = false, length = 5)
     private short actor_id;
     @Column(name = "first_name", length = 45, nullable = false)
     private String first_name;

@@ -14,6 +14,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Entity
 @Table(name = "film_category")
 public class Film_Category {
+    @Id
     @OneToOne
     @JoinColumn(name = "film_id")
     private Film film;

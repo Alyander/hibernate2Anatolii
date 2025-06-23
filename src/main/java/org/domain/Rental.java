@@ -24,7 +24,7 @@ public class Rental {
     private java.sql.Date rentalDate;
     @OneToOne
     @JoinColumn(name = "inventory_id")
-    private Inventory inventory;
+    private Inventory inventory_id;
     @OneToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
