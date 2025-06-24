@@ -17,14 +17,18 @@ public class DBControl {
     public DBControl() {
     }
 
-    public Customer createNewCustomer(short id, Store store,String FirstName, String LastName,String email, Address address, int active, Date create_date, Timestamp last_update, Session session ) {
-            Customer c = new Customer(id,store,FirstName,LastName,email,address,active,create_date,last_update);
-            session.save(c);
+    public Customer createNewCustomer( Store store,String FirstName, String LastName,String email, Address address, int active, Date create_date, Timestamp last_update, Session session ) {
+            session.merge(store);
+            session.merge(address);
+            Customer c = new Customer((short)0,store,FirstName,LastName,email,address,active,create_date,last_update);
+            session.merge(c);
+            session.persist(c);
         return c;
     }
     public void returnRentalFilm(Customer customer,Session session) {
             Rental rental = session.createQuery("FROM Rental WHERE customer_id='"+customer.getCustomer_id()+"' LIMIT 1", Rental.class).getSingleResult();
             rental.setReturnDate(new Date(System.currentTimeMillis()));
+            session.persist(rental);
     }
     public void RentalFilm(Customer customer, Inventory  inventory, Staff staff, Session session) {
             session.merge(customer);

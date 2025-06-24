@@ -18,7 +18,7 @@ public class Main {
             Address address = session.createQuery("FROM Address where address_id = 2", Address.class).getSingleResult();
             Store store = session.createQuery("FROM Store where store_id = 2", Store.class).getSingleResult();
             // Creation New Customer
-            Customer c = db.createNewCustomer((short) 999, store, "Mixail", "Makovodnick", "animeSoGOOD@gmail.com", address, 1, Date.valueOf("1900-04-05"), new Timestamp(System.currentTimeMillis()), session);
+            Customer c = db.createNewCustomer(store, "Mixail", "Makovodnick", "animeSoGOOD@gmail.com", address, 1, Date.valueOf("1900-04-05"), new Timestamp(System.currentTimeMillis()), session);
             Inventory inventory = session.createQuery("FROM Inventory where inventory_id = 2", Inventory.class).getSingleResult();
             Staff staff = session.createNativeQuery("SELECT * from staff where store_id = "+store.getStore_id(), Staff.class).getSingleResult();
             // Rental Film
