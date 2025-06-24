@@ -8,10 +8,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 @Setter
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "customer")
 public class Customer {
@@ -38,4 +39,19 @@ public class Customer {
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
+
+    public Customer() {
+    }
+
+
+    public Customer(Store store, String firstName, String lastName, String email, Address address, int active, Date createDate, Timestamp lastUpdate) {
+        this.store = store;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.address = address;
+        this.active = active;
+        this.createDate = createDate;
+        this.lastUpdate = lastUpdate;
+    }
 }

@@ -17,13 +17,17 @@ public class DBControl {
     public DBControl() {
     }
 
-    public Customer createNewCustomer( Store store,String FirstName, String LastName,String email, Address address, int active, Date create_date, Timestamp last_update, Session session ) {
-            session.merge(store);
-            session.merge(address);
-            Customer c = new Customer((short)0,store,FirstName,LastName,email,address,active,create_date,last_update);
-            session.merge(c);
-            session.persist(c);
-        return c;
+    public int createNewCustomer( int store_id,String FirstName, String LastName,String email, int address_id, int active, Date create_date, Timestamp last_update ) {
+            int id;
+            try (Session session = sessionFactory.openSession()) {
+                session.beginTransaction();
+                Customer customer = new Customer(session.get(Store.class,store_id), FirstName, LastName, email,  session.get(Address.class,address_id), active, create_date, last_update);
+                session.merge(customer);
+                session.persist(customer);
+                id = customer.getCustomer_id();
+                session.getTransaction().commit();
+            }
+        return id;
     }
     public void returnRentalFilm(Customer customer,Session session) {
             Rental rental = session.createQuery("FROM Rental WHERE customer_id='"+customer.getCustomer_id()+"' LIMIT 1", Rental.class).getSingleResult();
