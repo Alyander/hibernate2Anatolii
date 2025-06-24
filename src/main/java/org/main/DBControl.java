@@ -21,7 +21,7 @@ public class DBControl {
         Customer c;
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            c = new Customer(id,store,FirstName,LastName,email,address,active,create_date,last_update);
+            c = new Customer(store,FirstName,LastName,email,address,active,create_date,last_update);
             session.save(c);
             session.getTransaction().commit();
         }
@@ -38,7 +38,7 @@ public class DBControl {
     public void RentalFilm(Customer customer, Inventory  inventory, Staff staff) {
         try(Session session=sessionFactory.openSession()){
             session.beginTransaction();
-            Rental rental = new Rental((short) 101, new Date(System.currentTimeMillis()), inventory, customer, null, staff, new Timestamp(System.currentTimeMillis()));
+            Rental rental = new Rental(new Date(System.currentTimeMillis()), inventory, customer, null, staff, new Timestamp(System.currentTimeMillis()));
             session.persist(rental);
         }
     }
@@ -47,7 +47,7 @@ public class DBControl {
         Film film;
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            film = new Film((short) 101, title, Description, (short) 20250624, language, null, rental_duration, rental_rate,(short) length, replacement_cost, rating, special_features, new Timestamp(System.currentTimeMillis())  );
+            film = new Film(title, Description, (short) 20250624, language, null, rental_duration, rental_rate,(short) length, replacement_cost, rating, special_features, new Timestamp(System.currentTimeMillis())  );
             session.persist(film);
             for(Actor actor : actors){
                 Film_Actor f_a = new Film_Actor(actor,film, new Timestamp(System.currentTimeMillis()));
@@ -59,7 +59,7 @@ public class DBControl {
             }
             // Где будет доступно
             for (Store store : stores){
-                Inventory inventory = new Inventory((short) 101, film, store, new Timestamp(System.currentTimeMillis()) );
+                Inventory inventory = new Inventory( film, store, new Timestamp(System.currentTimeMillis()) );
                 session.persist(inventory);
             }
             Film_text film_text = new Film_text(film, new Timestamp(System.currentTimeMillis()), title, Description );

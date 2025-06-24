@@ -6,10 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Timestamp;
+
 @Setter
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
 @Entity
 @Table(name = "inventory")
 public class Inventory {
@@ -26,4 +26,13 @@ public class Inventory {
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
+
+    public Inventory() {
+    }
+
+    public Inventory(Film film, Store store, Timestamp lastUpdate) {
+        this.film = film;
+        this.store = store;
+        this.lastUpdate = lastUpdate;
+    }
 }

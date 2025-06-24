@@ -9,10 +9,12 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 @Setter
 @Getter
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
 @Table(name = "rental")
 public class Rental {
@@ -36,4 +38,16 @@ public class Rental {
     @Column(name = "last_update", nullable = false)
     @UpdateTimestamp
     private java.sql.Timestamp lastUpdate;
+
+    public Rental() {
+    }
+
+    public Rental(Date rentalDate, Inventory inventory_id, Customer customer_id, Date returnDate, Staff staff_id, Timestamp lastUpdate) {
+        this.rentalDate = rentalDate;
+        this.inventory_id = inventory_id;
+        this.customer_id = customer_id;
+        this.returnDate = returnDate;
+        this.staff_id = staff_id;
+        this.lastUpdate = lastUpdate;
+    }
 }

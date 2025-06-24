@@ -14,8 +14,6 @@ import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "film")
 public class Film {
@@ -55,4 +53,21 @@ public class Film {
     @UpdateTimestamp
     private java.sql.Timestamp last_update;
 
+    public Film() {
+    }
+
+    public Film(String title, String description, short release_year, Language language, Language original_language, int rental_duration, BigDecimal rental_rate, short length, BigDecimal replacement_cost, String rating, String special_features, Timestamp last_update) {
+        this.title = title;
+        this.description = description;
+        this.release_year = release_year;
+        this.language = language;
+        this.original_language = original_language;
+        this.rental_duration = rental_duration;
+        this.rental_rate = rental_rate;
+        this.length = length;
+        this.replacement_cost = replacement_cost;
+        this.rating = rating;
+        this.special_features = special_features;
+        this.last_update = last_update;
+    }
 }
