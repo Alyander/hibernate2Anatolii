@@ -36,7 +36,7 @@ public class Staff {
     private String email;
     @OneToOne
     @JoinColumn(name = "store_id", nullable = false)
-    private Store store;
+    private Store store_id;
     @Column(name = "active", length = 6, nullable = false)
     private short active;
     @Column(name = "username", nullable = false, length = 16)
