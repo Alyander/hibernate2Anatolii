@@ -30,7 +30,7 @@ public class DBControl {
     public void returnRentalFilm(Customer customer) {
         try(Session session=sessionFactory.openSession()){
             session.beginTransaction();
-            Rental rental = session.createQuery("FROM Rental WHERE customer_id='"+customer.getCustomer_id()+"' LIMIT 1", Rental.class).getSingleResult();
+            Rental rental = session.createNativeQuery("Select * FROM rental WHERE customer_id="+customer.getCustomer_id(), Rental.class).getSingleResult();
             rental.setReturnDate(new Date(System.currentTimeMillis()));
             session.getTransaction().commit();
         }
